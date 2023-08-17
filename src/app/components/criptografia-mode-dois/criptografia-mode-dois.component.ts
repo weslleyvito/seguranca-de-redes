@@ -47,6 +47,7 @@ export class CriptografiaModeDoisComponent {
     this.key = 0;
     this.tipoMovimento = "+";
     this.textoCriptografado = '';
+    this.textoDescriptografado = '';
 
   }
 
