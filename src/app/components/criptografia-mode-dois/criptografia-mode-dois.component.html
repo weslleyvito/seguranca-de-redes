@@ -1,0 +1,71 @@
+<div class="justify-content-between flex align-items-center gap-2">
+    <h2>Criptografia de Substituição com o Algorítimo Cifra de Cesar</h2>
+    <button (click)="reset()" class=" btn-refresh"><i class="pi pi-refresh"></i></button>
+</div>
+
+<div class="flex ign-items-center gap-2 p-2">
+
+    <div class="input">
+        <input [(ngModel)]="texto" class="input__content">
+        <span class="input__label">TEXTO CLARO</span>
+    </div>
+
+    <div class="input_number">
+        <input [(ngModel)]="key" class="input_number__content">
+        <span class="input_number__label">CHAVE</span>
+    </div>
+
+    <div class="select">
+        <select [(ngModel)]="tipoMovimento" class="select__content">
+            <option value="+" selected>Deslocamento à direita (+)</option>
+            <option value="-">Deslocamento à esquerda (-)</option>
+        </select>
+        <span class="input_number__label">MOVIMENTO</span>
+    </div>
+
+</div>
+
+<div class="flex justify-content-end p-2 gap-2">
+
+    <button class="btn" (click)="criptografar()">
+        <span class="btn__content">Criptografar</span>
+        <span class="btn__glitch"></span>
+        <span class="btn__label">btn-cript</span>
+    </button>
+
+    <button class="btn btn--secondary" (click)="descriptografar()">
+        <span class="btn__content">Descriptografar</span>
+        <span class="btn__glitch"></span>
+        <span class="btn__label">btn-descript</span>
+    </button>
+
+</div>
+
+<!-- <input [(ngModel)]="texto" placeholder="Texto a ser criptografado">
+<input [(ngModel)]="key" placeholder="Chave (número)">
+<select [(ngModel)]="tipoMovimento">
+    <option value="+" selected>Deslocamento à direita (+)</option>
+    <option value="-">Deslocamento à esquerda (-)</option>
+</select>
+<button (click)="criptografar()">Criptografar</button> -->
+
+<div class="flex gap-8 align-items-center ">
+
+    <div class="flex align-items-start gap-2">
+
+        <p>Texto criptografado: </p>
+        <p class="result"> {{ textoCriptografado}}</p>
+
+    </div>
+
+    <div class="flex align-items-start gap-2">
+
+        <p>Texto criptografado: </p>
+        <p class="result_des"> {{ resultado}}</p>
+
+    </div>
+
+</div>
+
+
+<!-- <p>Texto criptografado: {{ textoCriptografado }}</p> -->

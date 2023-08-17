@@ -1,0 +1,47 @@
+<div class="justify-content-between flex align-items-center gap-2">
+  <h2>Criptografia de Substituição com o Algorítimo THE CABAS</h2>
+  <button (click)="reset()" class=" btn-refresh"><i class="pi pi-refresh"></i></button>
+</div>
+
+<div>
+
+
+  <div class="flex align-items-center gap-2 p-2">
+
+    <div class="input">
+      <input [(ngModel)]="frase" class="input__content">
+      <span class="input__label">TEXTO CLARO</span>
+    </div>
+
+
+    <!-- <button ></button> -->
+    <button class="btn" (click)="substituirLetras()">
+      <span class="btn__content">Criptografar</span>
+      <span class="btn__glitch"></span>
+      <span class="btn__label">btn-cript</span>
+    </button>
+  </div>
+
+
+</div>
+
+<div class="flex align-items-start gap-2">
+
+  <p>Resultado Criptografado: </p>
+  <p class="result"> {{ resultado }}</p>
+
+</div>
+
+
+<button class="btn btn--secondary" (click)="descriptografar()">
+  <span class="btn__content">Descriptografar</span>
+  <span class="btn__glitch"></span>
+  <span class="btn__label">btn-descript</span>
+</button>
+
+<!-- <p>Resultado Descriptografado: {{ resultadoDescriptografado }}</p> -->
+
+<div class="flex align-items-start gap-2">
+  <p> Resultado:</p>
+  <p class="result_des"> {{ resultadoDescriptografado }}</p>
+</div>
