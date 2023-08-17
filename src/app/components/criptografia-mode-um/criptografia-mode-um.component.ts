@@ -23,6 +23,9 @@ export class CriptografiaModeUmComponent {
   animationState: string = 'in';
   mostrarResultado: boolean = false;
   mostrarTexto: boolean = false;
+  numero_um = 1;
+  numero_dois = 2;
+  numero_tres = 5;
 
   alfabeto = [
     { letra: 'a', index: 0 },
@@ -61,9 +64,9 @@ export class CriptografiaModeUmComponent {
 
       if (indexObj) {
         const index = indexObj.index;
-        const primeira = this.alfabeto[(index - 1 + 26) % 26].letra;
-        const segunda = this.alfabeto[(index + 2) % 26].letra;
-        const terceira = this.alfabeto[(index - 5 + 26) % 26].letra;
+        const primeira = this.alfabeto[(index - this.numero_um + 26) % 26].letra;
+        const segunda = this.alfabeto[(index + this.numero_dois) % 26].letra;
+        const terceira = this.alfabeto[(index - this.numero_tres + 26) % 26].letra;
         substituicoes.push(primeira + segunda + terceira);
       } else {
         substituicoes.push(letra);

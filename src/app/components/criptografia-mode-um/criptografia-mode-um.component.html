@@ -13,35 +13,67 @@
       <span class="input__label">TEXTO CLARO</span>
     </div>
 
+    <div class="input_number">
+      <input [(ngModel)]="numero_um" class="input_number__content" [readOnly]="true">
+      <span class="input_number__label">CHAVE-01</span>
+    </div>
 
-    <!-- <button ></button> -->
-    <button class="btn" (click)="substituirLetras()">
-      <span class="btn__content">Criptografar</span>
-      <span class="btn__glitch"></span>
-      <span class="btn__label">btn-cript</span>
-    </button>
+    <div class="input_number">
+      <input [(ngModel)]="numero_dois" class="input_number__content" [readOnly]="true">
+      <span class="input_number__label">CHAVE-02</span>
+    </div>
+
+
+    <div class="input_number">
+      <input [(ngModel)]="numero_tres" class="input_number__content" [readOnly]="true">
+      <span class="input_number__label">CHAVE-03</span>
+    </div>
+
+
   </div>
 
 
 </div>
 
-<div class="flex align-items-start gap-2">
+<div class="flex justify-content-end p-2 gap-2">
 
-  <p>Resultado Criptografado: </p>
-  <p class="result"> {{ resultado }}</p>
+  <!-- <button ></button> -->
+  <button class="btn" (click)="substituirLetras()">
+    <span class="btn__content">Criptografar</span>
+    <span class="btn__glitch"></span>
+    <span class="btn__label">btn-cript</span>
+  </button>
+
+
+  <button class="btn btn--secondary" (click)="descriptografar()">
+    <span class="btn__content">Descriptografar</span>
+    <span class="btn__glitch"></span>
+    <span class="btn__label">btn-descript</span>
+  </button>
+
+</div>
+
+<div class="flex gap-8 align-items-center ">
+
+  <div class="flex align-items-start gap-2">
+
+    <p>Resultado Criptografado: </p>
+    <p class="result"> {{ resultado }}</p>
+
+  </div>
+
+
+  <div class="flex align-items-start gap-2">
+
+    <p> Resultado:</p>
+    <p class="result_des"> {{ resultadoDescriptografado }}</p>
+
+  </div>
+
 
 </div>
 
 
-<button class="btn btn--secondary" (click)="descriptografar()">
-  <span class="btn__content">Descriptografar</span>
-  <span class="btn__glitch"></span>
-  <span class="btn__label">btn-descript</span>
-</button>
+
 
 <!-- <p>Resultado Descriptografado: {{ resultadoDescriptografado }}</p> -->
-
-<div class="flex align-items-start gap-2">
-  <p> Resultado:</p>
-  <p class="result_des"> {{ resultadoDescriptografado }}</p>
-</div>

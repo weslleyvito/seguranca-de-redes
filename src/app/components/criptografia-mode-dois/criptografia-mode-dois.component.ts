@@ -54,6 +54,7 @@ export class CriptografiaModeDoisComponent {
   textoCriptografado: string = '';
 
   criptografar() {
+    this.textoDescriptografado = '';
     const movimento = this.tipoMovimento === '+' ? 1 : -1;
     this.textoCriptografado = '';
 
