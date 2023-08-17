@@ -10,7 +10,7 @@ export class CriptografiaModeDoisComponent {
   texto: string = '';
   key: number = 0;
   tipoMovimento: string = '+';
-  resultado: string = '';
+  textoDescriptografado: string = '';
 
   alfabeto = [
     { letra: 'a', index: 0 },
@@ -53,33 +53,34 @@ export class CriptografiaModeDoisComponent {
   textoCriptografado: string = '';
 
   criptografar() {
+    const movimento = this.tipoMovimento === '+' ? 1 : -1;
     this.textoCriptografado = '';
 
-    for (const char of this.texto) {
-      const index = this.alfabeto.findIndex(item => item.letra === char.toLowerCase());
+    for (const letra of this.texto) {
+      const indexObj = this.alfabeto.find(item => item.letra === letra.toLowerCase());
 
-      if (index !== -1) {
-        let newIndex = index + (this.tipoMovimento === '+' ? this.key : -this.key);
-        newIndex = (newIndex + this.alfabeto.length) % this.alfabeto.length;
+      if (indexObj) {
+        const index = indexObj.index;
+        const newIndex = (index + this.key * movimento + 26) % 26;
         this.textoCriptografado += this.alfabeto[newIndex].letra;
       } else {
-        this.textoCriptografado += char;
+        this.textoCriptografado += letra;
       }
     }
   }
 
   descriptografar() {
-    this.resultado = '';
+    this.textoDescriptografado = '';
 
-    for (const char of this.texto) {
+    for (const char of this.textoCriptografado) {
       const index = this.alfabeto.findIndex(item => item.letra === char.toLowerCase());
 
       if (index !== -1) {
         let newIndex = index - (this.tipoMovimento === '+' ? this.key : -this.key);
         newIndex = (newIndex + this.alfabeto.length) % this.alfabeto.length;
-        this.resultado += this.alfabeto[newIndex].letra;
+        this.textoDescriptografado += this.alfabeto[newIndex].letra;
       } else {
-        this.resultado += char;
+        this.textoDescriptografado += char;
       }
     }
   }

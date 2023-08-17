@@ -4,7 +4,8 @@
 
 body {
 
-    background-color: #04090d;
+    // background-color: #04090d;
+    background-image: url('https://art.pixilart.com/3e3fc9c4c42536a.gif');
     font-family: Tomorrow, sans-serif !important;
 
 }
@@ -12,7 +13,7 @@ body {
 // Estilo do tabview vindo do prime-ng
 .p-tabview .p-tabview-panels {
 
-    background-color: #04090d !important;
+    background-color: rgba(4, 9, 13, 0.8) !important;
 }
 
 .p-tabview .p-tabview-nav {
