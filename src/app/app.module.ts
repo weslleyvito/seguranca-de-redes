@@ -10,12 +10,14 @@ import { CriptografiaModeDoisComponent } from './components/criptografia-mode-do
 
 // primeng imports
 import { TabViewModule } from 'primeng/tabview';
+import { TransposicaoComponent } from './components/transposicao/transposicao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CriptografiaModeUmComponent,
-    CriptografiaModeDoisComponent
+    CriptografiaModeDoisComponent,
+    TransposicaoComponent
   ],
   imports: [
     BrowserModule,

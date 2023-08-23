@@ -4,9 +4,11 @@
 
 body {
 
+
     // background-color: #04090d;
+    background-image: url('https://i.pinimg.com/originals/cd/fd/a4/cdfda49dd7071ec1623e87f55943ab3e.gif');
     // background-image: url('https://art.pixilart.com/3e3fc9c4c42536a.gif');
-    background-image: url('https://www.bing.com/th/id/OGC.ac45ad55ee570402edbffb9187349158?pid=1.7&rurl=http%3a%2f%2f2.bp.blogspot.com%2f-r1W-Xcl8e5s%2fVgKgX4g8qZI%2fAAAAAAAAAbY%2fdFu9CUILZQY%2fs1600%2f0746155001250776518.gif&ehk=Dqcc0Mjc1iZjQH45XNY8LMjioGnnNw%2bQe6KBuG3xjTY%3d');
+    // background-image: url('https://www.bing.com/th/id/OGC.ac45ad55ee570402edbffb9187349158?pid=1.7&rurl=http%3a%2f%2f2.bp.blogspot.com%2f-r1W-Xcl8e5s%2fVgKgX4g8qZI%2fAAAAAAAAAbY%2fdFu9CUILZQY%2fs1600%2f0746155001250776518.gif&ehk=Dqcc0Mjc1iZjQH45XNY8LMjioGnnNw%2bQe6KBuG3xjTY%3d');
     font-family: Tomorrow, sans-serif !important;
 
 }
@@ -159,6 +161,65 @@ body {
 
     }
 
+    .card_transposition {
+
+        width: 100%;
+        height: 400px;
+        // background: linear-gradient(135deg, #26fd01, #7e0000);
+        background-color: #20bad0;
+        padding: 1rem;
+        border-radius: 0.3rem 0.4rem 0.3rem 0.4rem;
+        border: 0;
+        position: relative;
+        font-family: Tomorrow, sans-serif;
+        font-size: .85rem;
+        text-transform: uppercase;
+        clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+        z-index: 1;
+
+        h2 {
+
+            color: white;
+
+        }
+
+        label,
+        p {
+
+            color: white;
+
+        }
+    }
+
+    .card_transposition__content {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        background-color: #04090d;
+        clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+        z-index: 2;
+    }
+
+    .card_transposition__label {
+
+        height: 10px;
+        position: absolute;
+        bottom: 0px;
+        right: 8%;
+        padding: 0 5px;
+        background-color: #04090d;
+        z-index: 3;
+        color: white;
+        font-size: 10px;
+
+    }
+
     .input {
 
         @extend .card;
@@ -188,6 +249,43 @@ body {
     }
 
     .input__label {
+
+        @extend .card__label;
+        top: 0px;
+        left: 8%;
+        width: max-content;
+
+    }
+
+    .input_key_text {
+
+        @extend .card;
+        width: 300px;
+        height: 70px;
+
+        color: white !important;
+        justify-content: center;
+
+        input {
+
+            padding-left: 2rem !important;
+            border: none;
+            font-size: 2.5em !important;
+            font-family: Tomorrow, sans-serif;
+        }
+
+    }
+
+    .input_key_text__content {
+
+        padding: 1rem;
+        color: white !important;
+        @extend .card__content;
+        // clip-path: polygon(92% 0, 99% 25%, 99% 100%, 8% 100%, 0% 75%, 0 0);
+
+    }
+
+    .input_key_text__label {
 
         @extend .card__label;
         top: 0px;
