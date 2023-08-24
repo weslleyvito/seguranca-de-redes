@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CriptografiaModeUmComponent } from './components/criptografia-mode-um/criptografia-mode-um.component';
 import { CriptografiaModeDoisComponent } from './components/criptografia-mode-dois/criptografia-mode-dois.component';
+import { CriptografiaModeUmComponent } from './components/criptografia-mode-um/criptografia-mode-um.component';
 
 // primeng imports
 import { TabViewModule } from 'primeng/tabview';
-import { TransposicaoComponent } from './components/transposicao/transposicao.component';
 import { ChaveUnicaComponent } from './components/chave-unica/chave-unica.component';
+import { ConfiguracoesComponent } from './components/configuracoes/configuracoes.component';
+import { TransposicaoComponent } from './components/transposicao/transposicao.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ChaveUnicaComponent } from './components/chave-unica/chave-unica.compon
     CriptografiaModeUmComponent,
     CriptografiaModeDoisComponent,
     TransposicaoComponent,
-    ChaveUnicaComponent
+    ChaveUnicaComponent,
+    ConfiguracoesComponent
   ],
   imports: [
     BrowserModule,

@@ -70,5 +70,21 @@
 
             </div>
         </p-tabPanel>
+        <p-tabPanel header="Header II">
+            <ng-template pTemplate="header">
+                <i class="pi pi-cog"></i>
+                <span>Configurações</span>
+            </ng-template>
+            <div class="grid-template_config">
+
+                <div class="card_config">
+                    <div class="card_config__content">
+                        <app-configuracoes></app-configuracoes>
+                    </div>
+                    <span class="card_config__label">CONFIGURAÇÕES</span>
+                </div>
+
+            </div>
+        </p-tabPanel>
     </p-tabView>
 </div>

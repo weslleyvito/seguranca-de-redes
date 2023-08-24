@@ -1,0 +1,46 @@
+<div class="content-config">
+
+    <div class="justify-content-start flex align-items-center gap-2">
+        <h2>CONFIGURAÇÕES</h2>
+
+    </div>
+
+    <div class="justify-content-start flex align-items-center gap-2">
+        <h3>TEMAS:</h3>
+
+    </div>
+    <div class="flex justify-content-between p-2 gap-2 w-full">
+
+
+        <button class="btn" (click)="mudarBackground(1)" (mouseover)="previewBackground(1)"
+            (mouseout)="limparPreview()">
+            <span class="btn__content">Background 1</span>
+            <span class="btn__glitch"></span>
+            <span class="btn__label">btn-bck-gr</span>
+        </button>
+
+        <button class="btn btn--secondary" (click)="mudarBackground(2)" (mouseover)="previewBackground(2)"
+            (mouseout)="limparPreview()">
+            <span class="btn__content">Background 2</span>
+            <span class="btn__glitch"></span>
+            <span class="btn__label">btn-bck-gr</span>
+        </button>
+
+        <button class="btn btn--third" (click)="mudarBackground(3)" (mouseover)="previewBackground(3)"
+            (mouseout)="limparPreview()">
+            <span class="btn__content">Background 3</span>
+            <span class="btn__glitch"></span>
+            <span class="btn__label">btn-bck-gr</span>
+        </button>
+
+        <!-- <button (click)="mudarBackground(1)" (mouseover)="previewBackground(1)" (mouseout)="limparPreview()">Background
+            1</button>
+        <button (click)="mudarBackground(2)" (mouseover)="previewBackground(2)" (mouseout)="limparPreview()">Background
+            2</button>
+        <button (click)="mudarBackground(3)" (mouseover)="previewBackground(3)" (mouseout)="limparPreview()">Background
+            3</button> -->
+    </div>
+
+    <div class="preview" [style.backgroundImage]="previewImage"></div>
+
+</div>
