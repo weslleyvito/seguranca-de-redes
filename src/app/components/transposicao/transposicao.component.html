@@ -21,7 +21,14 @@
 
 </div>
 
-<div class="flex justify-content-end p-2 gap-2">
+<div class="flex justify-content-between p-2 gap-2">
+
+    <div class="flex align-items-start gap-2">
+
+        <p>Texto criptografado: </p>
+        <p class="result"> {{ textoCriptografado}}</p>
+
+    </div>
 
     <button class="btn" (click)="transposicao()">
         <span class="btn__content">Criptografar</span>
@@ -48,7 +55,7 @@
 
         <div class="input_key_text">
             <input [(ngModel)]="chave" placeholder="Digite a chave" class="input_key_text__content">
-            <span class="input_key_text__label">TEXTO CLARO</span>
+            <span class="input_key_text__label">CHAVE</span>
         </div>
 
     </div>
@@ -57,7 +64,12 @@
 
 <div class="flex justify-content-between p-2 gap-2">
 
-    <p>Texto Descriptografado: {{ textoDescriptografado }}</p>
+    <div class="flex align-items-start gap-2">
+
+        <p>Texto criptografado: </p>
+        <p class="result_des"> {{ textoDescriptografado}}</p>
+
+    </div>
     <button class="btn btn--secondary" (click)="descriptografar()">
         <span class="btn__content">Descriptografar</span>
         <span class="btn__glitch"></span>

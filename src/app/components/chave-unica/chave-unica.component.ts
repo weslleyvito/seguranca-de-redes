@@ -8,50 +8,42 @@ import { Component } from '@angular/core';
 export class ChaveUnicaComponent {
   frase: string = '';
   chave: string = '';
-  opcaoSubstituicao: string = 'binaria';
   textoCriptografado: string = '';
+  textoDescriptografado: string = '';
 
-  formatarBinario(numero: number, tamanho: number): string {
-    let binario = numero.toString(2);
-    while (binario.length < tamanho) {
-      binario = '0' + binario;
-    }
-    return binario;
+  reset() {
+
+    this.frase = '';
+    this.chave = '';
+    this.textoCriptografado = '';
+    this.textoDescriptografado = '';
+
   }
 
   criptografar() {
     let criptografado = '';
 
-    for (let i = 0; i < this.frase.length; i++) {
-      const char = this.frase.charAt(i);
-      const chaveChar = this.chave.charAt(i % this.chave.length);
-      const charCode = char.charCodeAt(0);
-      const chaveCharCode = chaveChar.charCodeAt(0);
-
-      let novoCharCode: number;
-
-      switch (this.opcaoSubstituicao) {
-        case 'binaria':
-          novoCharCode = charCode ^ chaveCharCode;
-          criptografado += this.formatarBinario(novoCharCode, 8) + ' ';
-          break;
-        case 'dec':
-          novoCharCode = charCode + chaveCharCode;
-          criptografado += novoCharCode.toString(10) + ' ';
-          break;
-        case 'hex':
-          novoCharCode = charCode - chaveCharCode;
-          criptografado += novoCharCode.toString(16) + ' ';
-          break;
-        case 'char':
-          novoCharCode = charCode * chaveCharCode;
-          criptografado += String.fromCharCode(novoCharCode) + ' ';
-          break;
-        default:
-          criptografado += char;
-      }
+    for (const letra of this.frase) {
+      const ascii = letra.charCodeAt(0);
+      const chaveBinario = this.chave.charCodeAt(0).toString(2).padStart(8, '0');
+      const criptografadoBinario = (ascii ^ parseInt(chaveBinario, 2)).toString(2).padStart(8, '0');
+      criptografado += criptografadoBinario + ' ';
     }
 
     this.textoCriptografado = criptografado;
   }
+
+  descriptografar() {
+    let descriptografado = '';
+    const criptografados = this.textoCriptografado.trim().split(' ');
+
+    for (const criptografadoBinario of criptografados) {
+      const chaveBinario = this.chave.charCodeAt(0).toString(2).padStart(8, '0');
+      const descriptografadoAscii = parseInt(criptografadoBinario, 2) ^ parseInt(chaveBinario, 2);
+      descriptografado += String.fromCharCode(descriptografadoAscii);
+    }
+
+    this.textoDescriptografado = descriptografado;
+  }
+
 }

@@ -1,5 +1,5 @@
-<!-- <div class="justify-content-between flex align-items-center gap-2">
-    <h2>Criptografia de Substituição com o Algorítimo CHAVE UNICA</h2>
+<div class="justify-content-between flex align-items-center gap-2">
+    <h2>Criptografia de Substituição com o Algorítimo de Chave Única</h2>
     <button (click)="reset()" class=" btn-refresh"><i class="pi pi-refresh"></i></button>
 </div>
 
@@ -8,33 +8,39 @@
     <div class="flex align-items-center gap-2 p-2">
 
         <div class="input">
-            <input [(ngModel)]="textoOriginal" placeholder="Digite uma frase" class="input__content">
+            <input [(ngModel)]="frase" placeholder="Digite uma frase" class="input__content">
             <span class="input__label">TEXTO CLARO</span>
         </div>
 
-        <div class="input_number">
-            <input [(ngModel)]="chave" placeholder="Digite a chave numérica" class="input_number__content">
-            <span class="input_number__label">CHAVE</span>
+        <div class="input_key_text">
+            <input [(ngModel)]="chave" placeholder="Digite a chave" class="input_key_text__content">
+            <span class="input_key_text__label">CHAVE</span>
         </div>
 
     </div>
 
 </div>
 
-<div class="flex justify-content-end p-2 gap-2">
+<div class="flex justify-content-between p-2 gap-2">
 
+    <div class="flex align-items-start gap-2">
+
+        <p>Texto criptografado: </p>
+        <p class="result"> {{ textoCriptografado}}</p>
+
+    </div>
     <button class="btn" (click)="criptografar()">
         <span class="btn__content">Criptografar</span>
         <span class="btn__glitch"></span>
         <span class="btn__label">btn-cript</span>
     </button>
 
-  <button class="btn btn--secondary" (click)="descriptografar()">
+    <!-- <button class="btn btn--secondary" (click)="descriptografar()">
         <span class="btn__content">Descriptografar</span>
         <span class="btn__glitch"></span>
         <span class="btn__label">btn-descript</span>
     </button> -->
-<!-- 
+
 </div>
 
 <div>
@@ -48,7 +54,7 @@
 
         <div class="input_key_text">
             <input [(ngModel)]="chave" placeholder="Digite a chave" class="input_key_text__content">
-            <span class="input_key_text__label">TEXTO CLARO</span>
+            <span class="input_key_text__label">CHAVE</span>
         </div>
 
     </div>
@@ -57,22 +63,26 @@
 
 <div class="flex justify-content-between p-2 gap-2">
 
-    <p>Texto Descriptografado: {{ textoDescriptografado }}</p>
+    <div class="flex align-items-start gap-2">
+
+        <p>Texto criptografado: </p>
+        <p class="result_des"> {{ textoDescriptografado}}</p>
+
+    </div>
     <button class="btn btn--secondary" (click)="descriptografar()">
         <span class="btn__content">Descriptografar</span>
         <span class="btn__glitch"></span>
         <span class="btn__label">btn-descript</span>
     </button>
 
-</div>  -->
+</div>
 
-<input [(ngModel)]="frase" placeholder="Digite uma frase">
+<!-- <input [(ngModel)]="frase" placeholder="Digite uma frase">
 <input [(ngModel)]="chave" placeholder="Digite a chave">
-<select [(ngModel)]="opcaoSubstituicao">
-    <option value="binaria">Binária</option>
-    <option value="dec">Decimal</option>
-    <option value="hex">Hexadecimal</option>
-    <option value="char">Caractere</option>
-</select>
 <button (click)="criptografar()">Criptografar</button>
 <p>Texto Criptografado: {{ textoCriptografado }}</p>
+
+<input [(ngModel)]="textoCriptografado" placeholder="Digite o texto criptografado">
+<input [(ngModel)]="chave" placeholder="Digite a chave">
+<button (click)="descriptografar()">Descriptografar</button>
+<p>Texto Descriptografado: {{ textoDescriptografado }}</p> -->
