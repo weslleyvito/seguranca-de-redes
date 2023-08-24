@@ -11,13 +11,15 @@ import { CriptografiaModeDoisComponent } from './components/criptografia-mode-do
 // primeng imports
 import { TabViewModule } from 'primeng/tabview';
 import { TransposicaoComponent } from './components/transposicao/transposicao.component';
+import { ChaveUnicaComponent } from './components/chave-unica/chave-unica.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CriptografiaModeUmComponent,
     CriptografiaModeDoisComponent,
-    TransposicaoComponent
+    TransposicaoComponent,
+    ChaveUnicaComponent
   ],
   imports: [
     BrowserModule,
